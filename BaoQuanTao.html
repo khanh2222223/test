@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiển thị ảnh</title>
+    <style>
+        body {
+            background-color: #6b3a94; /* Màu tím */
+            margin: 0;
+            overflow: hidden; /* Ngăn trình duyệt cuộn */
+        }
+        /* Đặt kích thước tuyệt đối cho trang và ảnh */
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden; /* Ngăn trình duyệt cuộn */
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 95%;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="BaoQuanTao.png" alt="Ảnh của bạn">
+    </div>
+</body>
+</html>

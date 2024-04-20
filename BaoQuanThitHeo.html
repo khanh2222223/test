@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảo Quản Thịt Heo</title>
+    <style>
+        body {
+            background-color: #6b3a94; /* Màu tím */
+            margin: 0;
+            overflow: hidden; /* Ngăn trình duyệt cuộn */
+            position: relative; /* Thiết lập vị trí tương đối */
+        }
+
+        /* Đặt kích thước tuyệt đối cho trang */
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden; /* Ngăn trình duyệt cuộn */
+        }
+
+        .image-container {
+            position: relative; /* Thiết lập vị trí tương đối */
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1; /* Đặt z-index để đảm bảo phía trước tất cả các phần tử khác */
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 95%;
+        }
+
+        /* Ảnh nhỏ ở góc trái */
+        .corner-image {
+            position: absolute;
+            width: 50px; /* Điều chỉnh kích thước của ảnh */
+            height: auto;
+            animation: spin 2s linear infinite;
+            display: none; /* Ẩn ảnh ban đầu */
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <!-- Ảnh lớn chính giữa trang -->
+        <img src="BaoQuanThitHeo.png" alt="Ảnh của bạn">
+    </div>
+
+    <!-- Ảnh nhỏ ở góc trái -->
+    <img class="corner-image" src="test.gif" alt="Ảnh nhỏ">
+
+    <!-- JavaScript để hiển thị ảnh nhỏ ngẫu nhiên -->
+    <script>
+        window.onload = function() {
+            var cornerImage = document.querySelector('.corner-image');
+            var bodyWidth = document.body.clientWidth;
+            var bodyHeight = document.body.clientHeight;
+
+            cornerImage.style.display = 'block'; // Hiển thị ảnh
+
+            // Random vị trí mới cho ảnh
+            var randomX = Math.floor(Math.random() * (bodyWidth - 50)); // 50 là chiều rộng của ảnh
+            var randomY = Math.floor(Math.random() * (bodyHeight - 50)); // 50 là chiều cao của ảnh
+
+            cornerImage.style.top = randomY + 'px';
+            cornerImage.style.left = randomX + 'px';
+        }
+    </script>
+</body>
+</html>
